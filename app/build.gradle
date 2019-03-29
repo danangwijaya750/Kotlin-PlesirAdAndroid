@@ -45,7 +45,9 @@ ext {
     ]
     firebaseDeps = [
             firestore: 'com.google.firebase:firebase-firestore:' + versions.firestore,
-            core     : 'com.google.firebase:firebase-core:' + versions.firebase
+            core     : 'com.google.firebase:firebase-core:' + versions.firebase,
+            auth     : 'com.google.firebase:firebase-auth:16.1.0',
+            storage  : 'com.google.firebase:firebase-storage:16.0.5'
 
     ]
 }

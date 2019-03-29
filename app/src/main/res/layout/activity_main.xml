@@ -1,19 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.MainActivity">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             android:orientation="vertical"
+                                             android:background="#ffffffff"
+                                             tools:context=".ui.MainActivity">
 
-    <TextView
-            android:layout_width="wrap_content"
+    <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="25dp">
+
+            <ImageView
+                    android:tint="#ff000000"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center|left"
+                     />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Plesir.ads"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center|right"
+                     />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_margin="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            tools:layout_editor_absoluteX="20dp"
+            tools:ignore="MissingConstraints">
+
+        <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:cardElevation="5dp"
+                app:cardUseCompatPadding="true">
+            <android.support.v7.widget.SearchView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:searchHintIcon="@drawable/ic_launcher_background"
+                    app:defaultQueryHint="Cari Lokasi Iklan"
+                    app:iconifiedByDefault="false"
+                    app:queryBackground="@android:color/transparent" />
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        <GridLayout
+                android:gravity="center"
+                android:columnCount="3"
+                android:rowCount="2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+            >
+                <android.support.v7.widget.CardView
+                        app:cardBackgroundColor="#0a80d4"
+                        android:layout_margin="5dp"
+                        app:cardUseCompatPadding="true"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                >
+                    <ImageView
+                            android:tint="#ffffffff"
+                            android:layout_gravity="center"
+                            android:src="@drawable/all"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp" />
+                </android.support.v7.widget.CardView>
+                <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:text="Semua"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+            >
+                <android.support.v7.widget.CardView
+                        app:cardBackgroundColor="#ba00b4"
+                        android:layout_margin="5dp"
+                        app:cardUseCompatPadding="true"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                >
+                    <ImageView
+                            android:tint="#ffffffff"
+                            android:layout_gravity="center"
+                            android:src="@drawable/cetak"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp" />
+                </android.support.v7.widget.CardView>
+                <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:text="Cetak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+            >
+                <android.support.v7.widget.CardView
+                        app:cardBackgroundColor="#00e47a"
+                        android:layout_margin="5dp"
+                        app:cardUseCompatPadding="true"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                >
+                    <ImageView
+                            android:tint="#ffffffff"
+                            android:layout_gravity="center"
+                            android:src="@drawable/reklame"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp" />
+                </android.support.v7.widget.CardView>
+                <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:text="Reklame"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+            >
+                <android.support.v7.widget.CardView
+                        app:cardBackgroundColor="#df6711"
+                        android:layout_margin="5dp"
+                        app:cardUseCompatPadding="true"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                >
+                    <ImageView
+                            android:tint="#ffffffff"
+                            android:layout_gravity="center"
+                            android:src="@drawable/alat"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp" />
+                </android.support.v7.widget.CardView>
+                <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:text="Peralatan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+            >
+
+                <android.support.v7.widget.CardView
+                        app:cardBackgroundColor="#141026"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_margin="5dp"
+                        app:cardUseCompatPadding="true">
+
+                    <ImageView
+                            android:tint="#ffffffff"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/baliho" />
+                </android.support.v7.widget.CardView>
+                <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:text="Baliho"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+            >
+                <android.support.v7.widget.CardView
+                        app:cardBackgroundColor="#008477"
+                        android:layout_margin="5dp"
+                        app:cardUseCompatPadding="true"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                >
+                    <ImageView
+                            android:tint="#ffffffff"
+                            android:layout_gravity="center"
+                            android:src="@drawable/acara"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp" />
+                </android.support.v7.widget.CardView>
+                <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:text="Acara"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </GridLayout>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
