@@ -7,4 +7,131 @@
         android:layout_height="match_parent"
         tools:context=".ui.DetailSpaceActivity">
 
+    <TextView
+            android:text="Tanggal Mulai"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            app:layout_constraintStart_toStartOf="@+id/editTanggal" android:layout_marginTop="44dp"
+            app:layout_constraintTop_toBottomOf="@+id/ratingSpace"/>
+    <TextView
+            android:text="(YYYY-MM-dd)"
+            android:textColor="#fff"
+            android:textSize="15sp"
+            android:background="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTanggal"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" app:layout_constraintEnd_toStartOf="@+id/cardView"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp" android:layout_marginEnd="212dp" android:layout_marginRight="212dp"/>
+    <TextView
+            android:text="Durasi "
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            app:layout_constraintTop_toTopOf="@+id/textView4" app:layout_constraintStart_toStartOf="@+id/cardView"
+            app:layout_constraintBottom_toBottomOf="@+id/textView4"/>
+    <ImageView
+            android:layout_width="0dp"
+            android:scaleType="centerCrop"
+            android:layout_height="0dp" app:srcCompat="@drawable/banner_login"
+            android:id="@+id/imageView3"
+            android:layout_marginBottom="17dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textView3" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:textSize="32sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_height="wrap_content"
+            android:id="@+id/priceSpace"
+            app:layout_constraintStart_toStartOf="@+id/textView3" android:layout_marginTop="6dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"/>
+
+
+    <TextView
+            android:text="TextView"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/alamatSpace"
+            app:layout_constraintStart_toStartOf="@+id/priceSpace" android:layout_marginTop="7dp"
+            app:layout_constraintTop_toBottomOf="@+id/priceSpace"/>
+    <TextView
+            android:text="TextView"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingSpace"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="26dp"
+            android:layout_marginLeft="32dp" android:layout_marginStart="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/alamatSpace"/>
+    <TextView
+            android:text="TextView"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/visitorSpace"
+            android:layout_marginEnd="39dp"
+            android:layout_marginRight="39dp" android:layout_marginBottom="44dp"
+            app:layout_constraintEnd_toEndOf="@+id/textView" app:layout_constraintBottom_toTopOf="@+id/textView"/>
+    <TextView
+            android:text="/Bulan"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/priceSpace" android:layout_marginTop="29dp"
+            android:layout_marginLeft="21dp" android:layout_marginStart="21dp"
+            app:layout_constraintStart_toEndOf="@+id/priceSpace"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="340dp"/>
+
+    <android.support.v7.widget.CardView
+            android:layout_margin="5dp"
+            android:layout_width="0dp"
+            android:layout_height="50dp" android:id="@+id/cardView" android:layout_marginTop="94dp"
+            android:layout_marginBottom="95dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/visitorSpace" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="5dp" android:layout_marginRight="5dp"
+            app:layout_constraintStart_toEndOf="@+id/editTanggal">
+        <android.support.v7.widget.AppCompatEditText
+                android:background="@null"
+                android:hint="(Bulan)"
+                android:id="@+id/durasiEdit"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+    </android.support.v7.widget.CardView>
+    <Button
+            android:text="Pesan"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:textColor="#ffffffff"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:id="@+id/button" android:layout_marginTop="29dp"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" android:layout_marginBottom="15dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="9dp" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="9dp" android:layout_marginEnd="9dp" android:layout_marginRight="9dp"/>
 </android.support.constraint.ConstraintLayout>

@@ -5,33 +5,42 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Space(
-    @set:PropertyName("ID")
-    @get:PropertyName("ID")
     var id:String,
-    @set:PropertyName("Name")
-    @get:PropertyName("Name")
+    @set:PropertyName("name")
+    @get:PropertyName("name")
     var namaReklame: String,
-    @set:PropertyName("Deskripsi")
-    @get:PropertyName("Deskripsi")
+    @set:PropertyName("deskripsi")
+    @get:PropertyName("deskripsi")
     var deskripsi:String,
-    @set:PropertyName("Rating")
-    @get:PropertyName("Rating")
+    @set:PropertyName("rating")
+    @get:PropertyName("rating")
     var rating:String,
-    @set:PropertyName("SpaceTypeID")
-    @get:PropertyName("SpaceTypeID")
-    var spaceType:Int,
-    @set:PropertyName("Address")
-    @get:PropertyName("Address")
+    @set:PropertyName("space_type")
+    @get:PropertyName("space_type")
+    var spaceType:String,
+    @set:PropertyName("address")
+    @get:PropertyName("address")
     var address:String,
-    @set:PropertyName("Price")
-    @get:PropertyName("Price")
+    @set:PropertyName("price")
+    @get:PropertyName("price")
     var price:String,
-    @set:PropertyName("Visitors")
-    @get:PropertyName("Visitors")
-    var visitors:String,
-    @set:PropertyName("Phone")
-    @get:PropertyName("Phone")
-    var phone:String):Parcelable
+    @set:PropertyName("visitor")
+    @get:PropertyName("visitor")
+    var visitors:Long,
+    @set:PropertyName("phone")
+    @get:PropertyName("phone")
+    var phone:String,
+    @set:PropertyName("photo")
+    @get:PropertyName("photo")
+    var photo:String,
+    @set:PropertyName("height")
+    @get:PropertyName("height")
+    var heightSpace:Long,
+    @set:PropertyName("width")
+    @get:PropertyName("width")
+    var widthSpace:Long
+):Parcelable
 {
-    constructor():this("","","","",1,"","","","")
+    constructor():this("","","","","","","",0,"","",0,0)
+
 }

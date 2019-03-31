@@ -7,4 +7,27 @@
         android:layout_height="match_parent"
         tools:context=".ui.SplashActivity">
 
+    <ImageView
+            android:layout_width="150dp"
+            android:layout_height="0dp" app:srcCompat="@drawable/icon_hd"
+            android:id="@+id/imageView4" android:layout_marginTop="220dp"
+            android:layout_marginBottom="23dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textView5" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+            android:text="PLESIRADS"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:textSize="32sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView5"
+            app:layout_constraintStart_toStartOf="@+id/imageView4" app:layout_constraintTop_toBottomOf="@+id/imageView4"
+            android:layout_marginBottom="118dp" app:layout_constraintBottom_toTopOf="@+id/progressBar"/>
+    <ProgressBar
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/progressBar"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" android:layout_marginBottom="129dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 </android.support.constraint.ConstraintLayout>

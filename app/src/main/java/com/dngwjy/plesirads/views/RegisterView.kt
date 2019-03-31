@@ -1,6 +1,6 @@
 package com.dngwjy.plesirads.views
 
-interface LoginView {
+interface RegisterView {
     fun isLoading(state:Boolean)
-    fun showResult(state:Boolean,msg:String)
+    fun showResult(state: Boolean)
 }
