@@ -46,7 +46,7 @@ android:orientation="vertical"
                 android:text="PLESIRADS"
                 android:textStyle="bold"
                 android:textSize="32sp"
-                android:textColor="@color/colorPrimary"/>
+                android:textColor="@android:color/white"/>
         </LinearLayout>
     </RelativeLayout>
     <LinearLayout

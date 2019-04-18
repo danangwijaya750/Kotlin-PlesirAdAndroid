@@ -1,6 +1,7 @@
 package com.dngwjy.plesirads.ui
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -124,6 +125,8 @@ lateinit var db:FirebaseFirestore
                 items.put("end_date",endDate)
                db.collection("ad_space_order").document().set(items).addOnSuccessListener {
                     toast("Success Upload Request")
+                   val intent = Intent(this, PaymentActivity::class.java)
+                   startActivity(intent)
                 }.addOnFailureListener {
                    toast("Oops! Error ${it.message}")
                 }
