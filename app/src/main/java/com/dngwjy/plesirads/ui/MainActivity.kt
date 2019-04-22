@@ -7,6 +7,7 @@ import android.view.Window
 import com.dngwjy.plesirads.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_payment_confirmation.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,6 +31,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this,LoginActivity::class.java))
             finish()
         }
+        profile.setOnClickListener {
+            startActivity(Intent(this,PaymentActivity::class.java))
+        }
+
     }
     private fun replaceActivity(type:String){
         val intent= Intent(this,ListSpaceActivity::class.java)

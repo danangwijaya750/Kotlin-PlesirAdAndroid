@@ -6,6 +6,7 @@ import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
+import android.view.View
 import android.view.Window
 import com.bumptech.glide.Glide
 import com.dngwjy.plesirads.R
@@ -76,22 +77,24 @@ lateinit var db:FirebaseFirestore
             }
             if (documentSnapshot != null) {
                 resul=documentSnapshot.get("price").toString().toLong()+((wdth*hght)*20000)+(month*price)
-                uploadRequest(resul)
+                uploadRequest(resul,documentSnapshot.get("price").toString())
                 logD(resul.toString())
             }
             }
 
     }
-    private fun uploadRequest(price: Long){
+    private fun uploadRequest(price: Long,priceNormal:String){
         val builder= AlertDialog.Builder(this)
         builder.setTitle("Konfirmasi Pemesanan")
         builder.setMessage("Yakin Pesan space iklan ini? biaya yang harus Anda Bayar yaitu sebesar Rp.${NumberFormat.getNumberInstance(Locale.US).format(price) }")
         builder.setPositiveButton("Ya"){dialog,which ->
-
+                progressBar2.visibility= View.VISIBLE
+                button.visibility=View.GONE
                 val items = HashMap<String, Any>()
                 items.put("ad_space", data.id)
                 items.put("user", fAuth.currentUser!!.uid)
                 items.put("image", "")
+                items.put("transfer_image","")
                 val c = Calendar.getInstance().time
                 val df = SimpleDateFormat("yyyy-MM-dd")
                 val dfY = SimpleDateFormat("yyyy")
@@ -123,13 +126,20 @@ lateinit var db:FirebaseFirestore
                 endDate="${year}-${mnth}-${dy}"
                 logD(endDate)
                 items.put("end_date",endDate)
+                items.put("harga_satuan",priceNormal.toString())
+                items.put("harga_total",price.toString())
                db.collection("ad_space_order").document().set(items).addOnSuccessListener {
                     toast("Success Upload Request")
                    val intent = Intent(this, PaymentActivity::class.java)
                    startActivity(intent)
+                   progressBar2.visibility= View.GONE
+                   button.visibility=View.VISIBLE
                 }.addOnFailureListener {
                    toast("Oops! Error ${it.message}")
-                }
+                   progressBar2.visibility= View.GONE
+                   button.visibility=View.VISIBLE
+               }
+
         }
         builder.setNegativeButton("Tidak"){dialog,which ->
 
